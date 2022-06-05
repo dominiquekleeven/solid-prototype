@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8" />
+     <title>Decentralized Globe Data</title>
+     <script defer src="./index.js"></script>
+     <link rel="stylesheet" href="index.css" />
+   </head>
+
+   <body>
+     <header>
+       <h2>Solid Pod Portal</h2>
+       <h3>WebID Implementation Prototype</h3>
+     </header>
+     <section id="login" class="panel">
+       <div class="row">
+         <label id="labelLogin" for="btnLogin"
+           >Click the button to log into
+           <span id="solid_identity_provider"
+             >Identity Provider</span
+           >:
+         </label>
+         <button name="btnLogin" id="btnLogin">Login</button>
+         <p id="labelStatus" class="labelStatus"></p>
+       </div>
+     </section>
+
+
+     <div class="row panel">
+
+        <form id="pictureForm" enctype="multipart/form-data">
+            <div>
+                <label for="avatar">Upload a profile picture</label>
+                <input type="file"
+                id="fileInput" name="avatar"
+                accept="image/png, image/jpeg" multiple>
+            </div>
+            <div>
+              <button>Write Picture</button>
+            </div>
+           </form>
+
+     </div>
+
+     <div id="read" class="panel">
+       <div class="row">
+         <form id="writeForm">
+           <label id="writelabel" for="name">Write your name: </label>
+           <input
+             type="text"
+             id="input_name"
+             name="name"
+             size="50"
+             placeholder="Your name here"
+           />
+           <button type="submit">
+             Write to Profile
+           </button>
+         </form>
+       </div>
+
+       <dl class="display">
+         <dt>Writing status:&nbsp</dt>
+         <dd id="labelWriteStatus" class="labelStatus">...not written yet...</dd>
+       </dl>
+     </div>
+
+     <div id="read" class="panel">
+       <div class="row">
+         <form id="readForm">
+           <label id="readlabel" for="webID"
+             >Read back name from their WebID:
+           </label>
+           <input
+             type="url"
+             id="webID"
+             name="webID"
+             size="50"
+             placeholder="...not logged in yet - but enter any WebID to read from its profile..."
+           />
+           <button type="submit" name="btnRead" id="btnRead">
+             Read Profile
+           </button>
+         </form>
+       </div>
+       <dl class="display">
+         <dt>Formatted Name (FN) read from Pod:&nbsp</dt>
+         <dd id="labelFN">...not read yet...</dd>
+       </dl>
+
+       <dt>Profile Image</dt>
+       <img id="profilePic" src="" alt="Profile Picture">
+     </div>
+   </body>
+ </html>
